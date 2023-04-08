@@ -12,13 +12,14 @@ def PostaImagemNoTwitter(textoDoTweet, LocalDaImagem):
 
     #Os argumentos definem qual a sessão que será utilizada
     options.add_argument('--no-sandbox')
-    options.add_argument("--user-data-dir=/home/pedro/.config/google-chrome/Default")
+    #Tem que se mudar onde fica o user data
+    options.add_argument("--user-data-dir=/home/usuario/.config/google-chrome/Default")
     options.add_argument("--profile-directory=Default")
     options.add_argument('--headless')
     options.add_argument('--disable-dev-shm-usage')
 
-    #Inicialização do browser
-    browser = webdriver.Chrome(executable_path=r"/usr/bin/chromedriver", options=options)
+    #Inicialização do browser, tem que ser colocado o path do driver
+    browser = webdriver.Chrome(executable_path=r"pathTo/chromedriver", options=options)
 
     #Abre a página do twitter
     browser.get("https://twitter.com/home")

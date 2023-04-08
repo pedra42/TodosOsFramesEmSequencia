@@ -1,21 +1,16 @@
-# EVERY FRAME IN ORDER BOT FOR TWITTER
-# By Pigeonburger, 2022
-# https://github.com/pigeonburger
+# Bot Todos os Frames em Ordem 
+# É uma extensão do códido EVERY FRAME IN ORDER BOT FOR TWITTER pelo Pigeonburger, 2022, https://github.com/pigeonburger
+# https://github.com/pedra42, 2023
 
 import sqlite3 as db, os
 from postaImagemTwitter import PostaImagemNoTwitter
-#from requests_oauthlib import OAuth1Session
-
-#Isso será ignorado
-# Put your Twitter API keys and stuff here
-
 
 # Connect to the SQLite database that was created in setupbot.py
 connection = db.connect("/home/pedro/Documents/Git-Repositorys/every-frame-in-order-bot/framebot.db")
 cursor = connection.cursor()
 
 # Enter the name of the show you're posting frames for here:
-show_name = "O Auto da Compadecida"
+show_name = "Nome do Programa ou Filme que vai ser feito"
 
 # Put the number of frames the bot should post each time this script is run here.
 iters = 1
@@ -57,7 +52,7 @@ while iters > 0:
         # Need to add a check here to see if the entire series is finished or not....
 
     # Get the file path for the next frame to upload.
-    frame_path = f"/home/pedro/Documents/Git-Repositorys/every-frame-in-order-bot/frames/S{ep_season}/{ep_num}x{next_frame}.jpg"
+    frame_path = f"PathTo/frames/S{ep_season}/{ep_num}x{next_frame}.jpg"
 
     # The message to attach to the tweet
     msg = f"{show_name} - Frame {next_frame} de {total_frames}"
